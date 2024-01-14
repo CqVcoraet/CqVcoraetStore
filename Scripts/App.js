@@ -27,7 +27,7 @@ home.innerHTML = "Home";
 home.style.display = "inline-block";
 home.style.padding = "15px";
 home.style.color = "#FFFFFF"; // Set the text color
-menuBar.append(home);
+bg.apppend(home);
 
 // Add Products menu item to the menu bar
 var products = document.createElement("div");
@@ -35,6 +35,6 @@ products.innerHTML = "Products";
 products.style.display = "inline-block";
 products.style.padding = "15px";
 products.style.color = "#FFFFFF"; // Set the text color
-menuBar.append(products);
+bg.append(products);
 
 // Add more menu items as needed
