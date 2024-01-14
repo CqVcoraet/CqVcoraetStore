@@ -6,6 +6,7 @@ bg.style.top = "50%";
 bg.style.left = "50%";
 bg.style.transform = "translate(-50%, -50%)";
 bg.style.backgroundSize = "cover";
+bg.style.backgroundRepeat = "no-repeat";
 bg.style.position = "absolute";
 document.body.append(bg);
 
@@ -27,7 +28,7 @@ home.innerHTML = "Home";
 home.style.display = "inline-block";
 home.style.padding = "15px";
 home.style.color = "#FFFFFF"; // Set the text color
-bg.apppend(home);
+menuBar.append(home);
 
 // Add Products menu item to the menu bar
 var products = document.createElement("div");
@@ -35,6 +36,6 @@ products.innerHTML = "Products";
 products.style.display = "inline-block";
 products.style.padding = "15px";
 products.style.color = "#FFFFFF"; // Set the text color
-bg.append(products);
+menuBar.append(products);
 
 // Add more menu items as needed
