@@ -22,7 +22,7 @@ document.head.appendChild(fontLink);
 // Title Bar
 var titleBar = document.createElement("div");
 titleBar.style.width = "100%";
-titleBar.style.height = "100px";
+titleBar.style.height = "10%"; // Adjust the height percentage as needed
 titleBar.style.backgroundColor = "#0D2A36";
 titleBar.style.backgroundImage = "url('Images/CqVcoraetStoreLogo.png')";
 titleBar.style.backgroundSize = "contain";
@@ -30,40 +30,24 @@ titleBar.style.backgroundRepeat = "no-repeat";
 titleBar.style.backgroundPosition = "center";
 titleBar.style.position = "absolute";
 titleBar.style.transform = "translateX(-50%)";
-titleBar.style.top = "20%";
+titleBar.style.top = "30%"; // Adjust the top percentage as needed
 titleBar.style.left = "50%";
 titleBar.style.zIndex = "1";
 bg.append(titleBar);
 
+var titleBarTop = 30; // Adjust the value as needed
+
 // Menu Bar
 var menuBar = document.createElement("div");
 menuBar.style.width = "100%";
-menuBar.style.height = "50px";
+menuBar.style.height = "5%"; // Adjust the height percentage as needed
 menuBar.style.backgroundColor = "#03468F"; // Set the background color of the menu bar
 menuBar.style.position = "absolute";
 menuBar.style.transform = "translateX(-50%)";
-menuBar.style.top = "25.5%";
+menuBar.style.top = (titleBarTop + 10) + "%"; // 10% below the title bar
 menuBar.style.left = "50%";
 menuBar.style.zIndex = "1"; // Make sure the menu bar appears above other elements
 bg.append(menuBar);
-
-// Add Home menu item to the menu bar
-var home = document.createElement("div");
-home.innerHTML = "Home";
-home.style.display = "inline-block";
-home.style.padding = "15px";
-home.style.color = "#FFFFFF"; // Set the text color
-home.style.fontFamily = "Lexend, sans-serif"; // Set the font
-menuBar.append(home);
-
-// Add Products menu item to the menu bar
-var products = document.createElement("div");
-products.innerHTML = "Products";
-products.style.display = "inline-block";
-products.style.padding = "15px";
-products.style.color = "#FFFFFF"; // Set the text color
-products.style.fontFamily = "Lexend, sans-serif"; // Set the font
-menuBar.append(products);
 
 // Page Links
 var homeLink = document.createElement("a");
@@ -85,3 +69,28 @@ productsLink.style.textDecoration = "none"; // Remove underline from the link
 productsLink.style.fontFamily = "Lexend, sans-serif"; // Apply the custom font
 productsLink.innerHTML = "Products";
 menuBar.append(productsLink);
+
+// Link Button Configuration Settings
+window.addEventListener('DOMContentLoaded', (event) => {
+    // Load Home.js by default
+    loadPage('Home.js');
+
+    // Handle navigation
+    document.getElementById('homeBtn').addEventListener('click', () => {
+        loadPage('Home.js');
+    });
+
+    document.getElementById('productsBtn').addEventListener('click', () => {
+        loadPage('Products.js');
+    });
+});
+
+function loadPage(pageName) {
+    fetch(`Scripts/${pageName}`)
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('content').innerHTML = data;
+        })
+        .catch(error => console.error('Error loading page:', error));
+}
+
