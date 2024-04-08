@@ -4,11 +4,22 @@ bg.style.width = "800px";
 bg.style.height = "1600px";
 bg.style.top = "50%";
 bg.style.left = "50%";
+bg.style.backgroundColor = "black";
 bg.style.transform = "translate(-50%, -50%)";
 bg.style.backgroundSize = "cover";
 bg.style.backgroundRepeat = "no-repeat";
 bg.style.position = "absolute";
 document.body.append(bg);
+
+// Title Bar
+var titleBar = document.createElement("div");
+titleBar.style.width = "100%";
+titleBar.style.height = "50px";
+titleBar.style.backgroundColor = "#2981A3";
+titleBar.style.position = "absolute";
+titleBar.style.transform = "translateX(-50%)";
+titleBar.style.top = "10%";
+titleBar.style.left = "50%";
 
 // Menu Bar
 var menuBar = document.createElement("div");
@@ -17,8 +28,8 @@ menuBar.style.height = "50px";
 menuBar.style.backgroundColor = "#03468F"; // Set the background color of the menu bar
 menuBar.style.position = "absolute";
 menuBar.style.transform = "translateX(-50%)";
-menuBar.style.top = "0";
-menuBar.style.left = "0";
+menuBar.style.top = "25%";
+menuBar.style.left = "50%";
 menuBar.style.zIndex = "1"; // Make sure the menu bar appears above other elements
 bg.append(menuBar);
 
