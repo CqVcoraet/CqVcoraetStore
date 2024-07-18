@@ -88,5 +88,5 @@ menuBar.append(productsLink);
 
 // To Home Page
 home.addEventListener("click", function() {
-    window.location.href = "Home.html";
+    window.location.href = "home.html";
 })
